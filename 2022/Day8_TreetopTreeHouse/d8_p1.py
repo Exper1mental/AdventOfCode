@@ -1,7 +1,6 @@
 input_file = open('input.txt', 'r').readlines()
 rows = len(input_file)
 cols = len(input_file[0])
-tree_list = []
 visible_trees = 0
 hidden_trees = 0
 
@@ -38,15 +37,8 @@ for i, line in enumerate(input_file):
             visible_trees += 1
         else:
             if is_shortest_tree(i, j, int(tree_h)):
-                # print(i, j, tree_h)
                 hidden_trees += 1
             else:
                 visible_trees += 1
                 
-
 print(visible_trees, hidden_trees)
-        
-        
-    
-# Tree visible if top, bottom, left, and right tree are shorter (same height means hidden)
-# All trees on edges are visible
